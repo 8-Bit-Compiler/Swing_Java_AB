@@ -1,0 +1,1 @@
+<%@ include file="/fragments/header.jspf" %><section class="empty-state"><div class="section-eyebrow">404 / OFF THE BEATEN PATH</div><h1>This find has wandered off.</h1><p>Let's get you back to something good.</p><a class="button dark" href="${ctx}/products">Explore the collection ↗</a></section><%@ include file="/fragments/footer.jspf" %>

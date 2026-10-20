@@ -1,0 +1,12 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
+<%@ taglib prefix="shop" tagdir="/WEB-INF/tags" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<fmt:setLocale value="en_IN"/>
+<!DOCTYPE html><html lang="${empty sessionScope.lang ? 'en' : sessionScope.lang}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ShopSphere · Everyday, elevated</title><link rel="stylesheet" href="${ctx}/assets/style.css"><script src="${ctx}/assets/app.js" defer></script><link rel="icon" href="${ctx}/assets/mark.svg" type="image/svg+xml"></head><body>
+<div class="announcement">A little more considered. A little more you. <span>Free shipping on every order ↗</span></div>
+<header class="site-header"><div class="nav-shell"><a class="logo" href="${ctx}/"><span class="logo-mark">s<span>•</span></span> shopsphere<span class="logo-dot">.</span></a><nav class="primary-nav" aria-label="Main navigation"><a class="${page == 'store' ? 'selected' : ''}" href="${ctx}/products">Discover</a><a href="${ctx}/products?category=3">Everyday essentials</a><a href="${ctx}/products?category=2">For your workspace</a></nav><div class="nav-actions"><a class="icon-link" href="${ctx}/wishlist" aria-label="Wishlist">♡</a><a class="account-link" href="${ctx}/${empty sessionScope.user ? 'login' : 'profile'}"><span class="person-icon">♙</span><span><c:out value="${empty sessionScope.user ? 'Sign in' : sessionScope.user.name}"/></span></a><a class="bag-link" href="${ctx}/cart" aria-label="Shopping bag">Bag <span class="counter">${empty bagCount ? 0 : bagCount}</span></a></div></div></header>
+<main class="container">
+<c:if test="${not empty flash}"><div class="notice" role="status"><span>✓</span><c:out value="${flash}"/><button class="notice-close" aria-label="Dismiss notification">×</button></div></c:if>

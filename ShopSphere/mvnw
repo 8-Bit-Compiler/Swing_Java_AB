@@ -1,0 +1,13 @@
+#!/bin/sh
+set -eu
+cd "$(dirname "$0")"
+if [ -z "${JAVA_HOME:-}" ] && [ -x /opt/homebrew/opt/openjdk@17/bin/java ]; then
+  JAVA_HOME=/opt/homebrew/opt/openjdk@17; export JAVA_HOME
+fi
+if [ -n "${JAVA_HOME:-}" ]; then PATH="$JAVA_HOME/bin:$PATH"; export PATH; fi
+if [ ! -x .tools/apache-maven-3.9.11/bin/mvn ]; then
+ mkdir -p .tools
+ curl -fsSL https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.11/apache-maven-3.9.11-bin.tar.gz -o .tools/maven.tar.gz
+ tar -xzf .tools/maven.tar.gz -C .tools
+fi
+exec .tools/apache-maven-3.9.11/bin/mvn "$@"

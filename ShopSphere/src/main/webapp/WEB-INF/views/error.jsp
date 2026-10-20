@@ -1,0 +1,1 @@
+<%@ include file="/fragments/header.jspf" %><section class="empty-state"><div class="section-eyebrow">LET'S TRY THAT AGAIN</div><h1>A little adjustment needed.</h1><p><c:out value="${error}"/></p><a class="button dark" href="${ctx}/products">Back to collection ↗</a></section><%@ include file="/fragments/footer.jspf" %>

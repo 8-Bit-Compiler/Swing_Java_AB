@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-19",
+  "java": 17,
+  "tomcat": "11.0.27",
+  "database": "H2 2.3.232 MySQL compatibility mode",
+  "junit": {
+    "tests": "17",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0"
+  },
+  "http": {
+    "root_context": 17,
+    "packaged_war_shopsphere_context": 17
+  },
+  "mysql_runtime_verified": false,
+  "swing": "Launched; interactive UI not automated; shared service operations tested"
+}

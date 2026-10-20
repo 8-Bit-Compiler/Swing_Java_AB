@@ -1,0 +1,11 @@
+// Historical source only. Excluded from the modern build; browsers no longer support applets.
+// Under a historical JDK with appletviewer, save this file as HistoricalShopApplet.java.
+import java.applet.Applet;
+import java.awt.Graphics;
+public class HistoricalShopApplet extends Applet {
+ public void init() { setBackground(java.awt.Color.WHITE); }
+ public void start() { System.out.println("Applet started"); }
+ public void paint(Graphics g) { g.drawString("ShopSphere historical applet",20,30); }
+ public void stop() { System.out.println("Applet stopped"); }
+ public void destroy() { System.out.println("Applet destroyed"); }
+}

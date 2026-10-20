@@ -1,0 +1,5 @@
+<%@ include file="/fragments/header.jspf" %><%@ page import="java.util.concurrent.atomic.AtomicInteger,com.shopsphere.demo.JndiDemo" %>
+<%! private final AtomicInteger visits = new AtomicInteger(); %>
+<% int visit = visits.incrementAndGet(); String topic = "Traditional JSP elements"; %>
+<%-- JSP comments are removed from the generated response. Scriptlets stay in this teaching page. --%>
+<section class="form-page"><a class="text-link" href="${ctx}/demo">← Java lab</a><h1><%= topic %></h1><div class="panel"><p>This page has served <%= visit %> requests since it was loaded.</p><p>Servlet: <%= config.getServletName() %> · Container: <%= application.getServerInfo() %></p><p>JSP source is translated into a servlet, compiled, initialized with jspInit, serves requests via _jspService, and is destroyed with jspDestroy.</p><h3>JNDI resource lookup</h3><% try { String result=JndiDemo.inspect(); %><p><%= result %></p><% } catch(Exception e) { %><p>No JNDI DataSource is configured. See docs/SETUP.md for the Tomcat resource example. This is optional; the store uses its configured JDBC connection.</p><% } %></div></section><%@ include file="/fragments/footer.jspf" %>

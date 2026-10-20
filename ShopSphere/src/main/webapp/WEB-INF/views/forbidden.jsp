@@ -1,0 +1,1 @@
+<%@ include file="/fragments/header.jspf" %><section class="empty-state"><div class="section-eyebrow">403 / STAFF ONLY</div><h1>This space is for store admins.</h1><p>Your account doesn't have permission to open this page.</p><a class="button dark" href="${ctx}/products">Explore the collection ↗</a></section><%@ include file="/fragments/footer.jspf" %>

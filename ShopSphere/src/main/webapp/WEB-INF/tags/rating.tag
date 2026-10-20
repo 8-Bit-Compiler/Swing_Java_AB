@@ -1,0 +1,1 @@
+<%@ tag pageEncoding="UTF-8" %><%@ attribute name="value" required="true" type="java.lang.Number" %><%@ taglib prefix="c" uri="jakarta.tags.core" %><span class="rating" aria-label="${value} out of 5 stars"><c:forEach begin="1" end="5" var="i">${i <= value ? '★' : '☆'}</c:forEach></span>
